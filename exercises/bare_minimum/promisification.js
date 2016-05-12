@@ -27,7 +27,8 @@ var getGitHubProfile = function(user, callback) {
   });
 };
 
-var getGitHubProfileAsync; // TODO
+var getGitHubProfileAsync = Promise.promisify(getGitHubProfile); 
+
 
 
 // (2) Asyncronous token generation
@@ -38,7 +39,7 @@ var generateRandomToken = function(callback) {
   });
 };
 
-var generateRandomTokenAsync; // TODO
+var generateRandomTokenAsync = Promise.promisify(generateRandomToken); 
 
 
 // (3) Asyncronous file manipulation
