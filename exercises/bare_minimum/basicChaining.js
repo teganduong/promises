@@ -29,10 +29,7 @@ var fetchProfileAndWriteToFile = function(readFilePath, writeFilePath) {
       return helpers.getGitHubProfileAsync(username);
     })
     .then(function(body) {
-      return JSON.stringify(body, null, 2);
-    })
-    .then(function(stringBody) {
-      return fs.writeFile(writeFilePath, stringBody);
+      return fs.writeFileSync(writeFilePath, JSON.stringify(body, null, 2));
     });
 };
 
